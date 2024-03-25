@@ -1,0 +1,17 @@
+/**
+ *
+ * Theme Name:    La Vall de Vidre
+ * Theme URI:     https://github.com/orzocogorzo/lavalldevidre/
+ * Description:   Twenty Twenty Four child theme
+ * Author:        Lucas García
+ * Author URI:    https://github.com/orzocogorzo
+ * Template:      twentytwentyfour
+ * Version:       1.0.0
+ * License:       GNU General Public License v2 or later
+ * License URI:   http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:   vdv
+ * Domain Path:   /languages
+ *
+ */
+
+@import "assets/css/index.css";
