@@ -4,6 +4,8 @@ require_once 'includes/model-article.php';
 require_once 'includes/model-publication.php';
 require_once 'includes/model-advertiser.php';
 
+require_once 'includes/shortcodes/advertiser-contact.php';
+
 add_action('wp_enqueue_scripts', 'vdv_enqueue_scripts');
 function vdv_enqueue_scripts()
 {
@@ -46,3 +48,58 @@ function tg_include_custom_post_types_in_archive_pages($query)
         $query->set('post_type', ['post', 'advertiser', 'publication', 'article']);
     }
 }
+
+add_action('admin_init', function () {
+    // Redirect any user trying to access comments page
+    global $pagenow;
+
+    if ($pagenow === 'edit-comments.php') {
+        wp_safe_redirect(admin_url());
+        exit;
+    }
+
+    // Remove comments metabox from dashboard
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+    // Disable support for comments and trackbacks in post types
+    foreach (get_post_types() as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+    if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+    }
+});
+
+add_action('init', 'vdv_acf_pattern_categories');
+function vdv_acf_pattern_categories()
+{
+    register_block_pattern_category('acf', [
+        'label' => __('ACF', 'vdv')
+    ]);
+}
+
+add_action('pre_get_posts', function ($query) {
+    if (!$query->is_main_query() && !is_admin() && $query->query_vars['post_type'] === 'advertiser') {
+        $query->set('orderby', 'rand');
+        // $query->query_vars['orderby'] = 'rand';
+    }
+});

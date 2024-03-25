@@ -79,39 +79,58 @@
       ],
       "fontSizes": [
         {
+          "fluid": false,
           "name": "xSmall",
           "slug": "x-small",
           "size": "0.88rem"
         },
         {
-          "name": "CustomSmall",
-          "slug": "custom-small",
+          "fluid": false,
+          "name": "Small",
+          "slug": "small",
           "size": "1rem"
         },
         {
-          "name": "subtitle",
-          "slug": "subtitle",
-          "size": "1.11rem"
-        },
-        {
+          "fluid": false,
           "name": "Medium",
           "slug": "medium",
           "size": "1.33rem"
         },
         {
+          "fluid": {
+            "min": "1.33rem",
+            "max": "1.55rem"
+          },
           "name": "Large",
           "slug": "large",
           "size": "1.55rem"
         },
         {
+          "fluid": {
+            "min": "1.55rem",
+            "max": "1.66rem"
+          },
           "name": "xLarge",
           "slug": "x-large",
           "size": "1.66rem"
         },
         {
+          "fluid": {
+            "min": "1.66rem",
+            "max": "2.77rem"
+          },
           "name": "xxLarge",
           "slug": "xx-large",
           "size": "2.77rem"
+        },
+        {
+          "fluid": {
+            "min": "2.77rem",
+            "max": "3.27rem"
+          },
+          "name": "xxxLarge",
+          "slug": "xxx-large",
+          "size": "3.27rem"
         }
       ]
     }
@@ -230,7 +249,7 @@
       },
       "core/post-title": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--x-large)"
+          "fontSize": "var(--wp--preset--font-size--xxx-large)"
         }
       },
       "core/preformatted": {
