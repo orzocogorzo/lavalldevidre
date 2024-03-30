@@ -16,11 +16,11 @@ if ($post_id) {
 
 	$dir = dirname(__FILE__, 2);
 	$path = preg_replace('#^(.(?!wp-content))*.#', '', $dir);
-	$src = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}/{$path}/stream.php?url={$download_url}";
+	$src = "https://{$_SERVER['HTTP_HOST']}/{$path}/stream.php?url={$download_url}";
 } else {
 	$dir = dirname(__FILE__, 2);
 	$path = preg_replace('#^(.(?!wp-content))*.#', '', $dir);
-	$src = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}/{$path}/placeholder.pdf";
+	$src = "https://{$_SERVER['HTTP_HOST']}/{$path}/placeholder.pdf";
 }
 ?>
 
