@@ -2,9 +2,9 @@
 
 require_once 'includes/model-article.php';
 require_once 'includes/model-publication.php';
-require_once 'includes/model-advertiser.php';
+require_once 'includes/model-merchant.php';
 
-require_once 'includes/shortcodes/advertiser-contact.php';
+require_once 'includes/shortcodes/merchant-contact.php';
 
 require_once 'custom-blocks/pdf-reader/pdf-reader.php';
 
@@ -47,7 +47,7 @@ add_action('pre_get_posts', 'tg_include_custom_post_types_in_archive_pages');
 function tg_include_custom_post_types_in_archive_pages($query)
 {
     if ($query->is_main_query() && ! is_admin() && (is_category() || is_tag() && empty($query->query_vars['suppress_filters']))) {
-        $query->set('post_type', ['post', 'advertiser', 'publication', 'article']);
+        $query->set('post_type', ['post', 'merchant', 'publication', 'article']);
     }
 }
 
@@ -92,9 +92,8 @@ add_action('init', function () {
 });
 
 add_action('pre_get_posts', function ($query) {
-    if (!$query->is_main_query() && !is_admin() && $query->query_vars['post_type'] === 'advertiser') {
+    if (!$query->is_main_query() && !is_admin() && $query->query_vars['post_type'] === 'merchant') {
         $query->set('orderby', 'rand');
-        // $query->query_vars['orderby'] = 'rand';
     }
 });
 

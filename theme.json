@@ -19,14 +19,14 @@
   ],
   "customTemplates": [
     {
-      "name": "single-advertiser",
+      "name": "single-merchant",
       "title": "Anunciant",
-      "postTypes": ["advertiser"]
+      "postTypes": ["merchant"]
     },
     {
-      "name": "archive-advertiser",
+      "name": "archive-merchant",
       "title": "Anunciants",
-      "postTypes": ["advertiser"]
+      "postTypes": ["merchant"]
     },
     {
       "name": "single-publication",

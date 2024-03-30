@@ -1,6 +1,6 @@
 <?php
 
-add_shortcode('advertiser_contact', function () {
+add_shortcode('merchant_contact', function () {
 
     $webpage = get_field('webpage');
     $email = get_field('email');
@@ -11,7 +11,7 @@ add_shortcode('advertiser_contact', function () {
     ob_start();
     ?>
 
-<div class="wp-block-group advertiser-contact is-layout-flow wp-container-core-group-layout-5 wp-block-group-is-layout-flow">
+<div class="wp-block-group merchant-contact is-layout-flow wp-container-core-group-layout-5 wp-block-group-is-layout-flow">
     <?php if ($email) : ?>
     <p style="margin: 0;"><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
     <?php endif; ?>

@@ -1,14 +1,14 @@
 <?php
 
-add_action('init', 'vdv_advertiser_model');
-function vdv_advertiser_model()
+add_action('init', 'vdv_merchant_model');
+function vdv_merchant_model()
 {
     register_post_type(
-        'advertiser',
+        'merchant',
         [
             'labels' => [
-                'name' => __('Anunciants', 'vdv'),
-                'singular_name' => __('Anunciant', 'vdv')
+                'name' => __('Comerços', 'vdv'),
+                'singular_name' => __('Comerç', 'vdv')
             ],
 
             // Frontend

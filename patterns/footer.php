@@ -19,7 +19,7 @@
                 <div class="wp-block-group">
                     <!-- wp:image {"id":414,"sizeSlug":"large","linkDestination":"none"} -->
                     <figure class="wp-block-image size-large">
-                        <img src="http://lavalldevidre.local/wp-content/uploads/2024/03/logotip-white-1024x144.png" alt="" class="wp-image-414"/>
+                        <img src="http://lavalldevidre.cat/wp-content/uploads/2024/03/logotip-white-1024x144.png" alt="" class="wp-image-414"/>
                     </figure>
                     <!-- /wp:image -->
 
@@ -66,7 +66,7 @@
                         <!-- wp:image {"id":417,"width":"auto","height":"150px","sizeSlug":"full","linkDestination":"custom"} -->
                         <figure class="wp-block-image size-full is-resized">
                             <a href="https://veinsdevallvidrera.blogspot.com">
-                                <img src="https://lavalldevidre.local/wp-content/uploads/2024/03/logo_associacio-white.png" alt="" class="wp-image-417" style="width:auto;height:150px"/>
+                                <img src="https://lavalldevidre.cat/wp-content/uploads/2024/03/logo_associacio-white.png" alt="" class="wp-image-417" style="width:auto;height:150px"/>
                             </a>
                         </figure>
                         <!-- /wp:image -->
