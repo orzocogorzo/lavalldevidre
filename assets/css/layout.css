@@ -1,0 +1,20 @@
+.site-content {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .site-content {
+    display: block;
+  }
+}
+
+.site-content > main {
+  flex: 1;
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important
+}
+
+.site-content > aside {
+  max-width: 300px !important;
+}

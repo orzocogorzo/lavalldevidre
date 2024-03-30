@@ -1,0 +1,21 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+body .wp-block-vdv-pdf-reader .is-layout-flex {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+body .wp-block-vdv-pdf-reader .is-layout-flex > * {
+	margin: 0;
+}
+
+.wp-block-vdv-pdf-reader .wp-container-core-group-layout-6.wp-container-core-group-layout-6 {
+	flex-wrap: nowrap;
+	justify-content: center;
+}

@@ -6,6 +6,8 @@ require_once 'includes/model-advertiser.php';
 
 require_once 'includes/shortcodes/advertiser-contact.php';
 
+require_once 'custom-blocks/pdf-reader/pdf-reader.php';
+
 add_action('wp_enqueue_scripts', 'vdv_enqueue_scripts');
 function vdv_enqueue_scripts()
 {
@@ -89,17 +91,77 @@ add_action('init', function () {
     }
 });
 
-add_action('init', 'vdv_acf_pattern_categories');
-function vdv_acf_pattern_categories()
-{
-    register_block_pattern_category('acf', [
-        'label' => __('ACF', 'vdv')
-    ]);
-}
-
 add_action('pre_get_posts', function ($query) {
     if (!$query->is_main_query() && !is_admin() && $query->query_vars['post_type'] === 'advertiser') {
         $query->set('orderby', 'rand');
         // $query->query_vars['orderby'] = 'rand';
     }
 });
+
+add_action('init', 'vdv_custom_block_styles');
+function vdv_custom_block_styles()
+{
+    $styles = [
+        'core/group' => [
+            'hidden' => __('Hidden', 'vdv'),
+            'show-mobile' => __('ShowOn Mobile', 'wpct'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
+            'show-tablet' => __('ShowOn Tablet', 'wpct'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
+            'show-desktop' => __('ShowOn Desktop', 'wpct'),
+        ],
+        'core/column' => [
+            'hidden' => __('Hidden', 'wpct'),
+            'show-mobile' => __('ShowOn Mobile', 'wpct'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
+            'show-tablet' => __('ShowOn Tablet', 'wpct'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
+            'show-desktop' => __('ShowOn Desktop', 'wpct')
+        ],
+        'core/spacer' => [
+            'hidden' => __('Hidden', 'wpct'),
+            'show-mobile' => __('ShowOn Mobile', 'wpct'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
+            'show-tablet' => __('ShowOn Tablet', 'wpct'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
+            'show-desktop' => __('ShowOn Desktop', 'wpct')
+        ],
+        'core/columns' => [
+            'hidden' => __('Hidden', 'wpct'),
+            'show-mobile' => __('ShowOn Mobile', 'wpct'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
+            'show-tablet' => __('ShowOn Tablet', 'wpct'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
+            'show-desktop' => __('ShowOn Desktop', 'wpct')
+        ]
+
+    ];
+
+    foreach ($styles as $block => $style) {
+        foreach ($style as $name => $label) {
+            register_block_style(
+                $block,
+                [
+                    'name' => $name,
+                    'label' => $label
+                ]
+            );
+        }
+    }
+}
+
+add_action('admin_menu', 'vdv_reusable_blocks_admin_menu');
+function vdv_reusable_blocks_admin_menu()
+{
+    add_menu_page(
+        'Blocs Reutilitzables',
+        'Blocs Reutilitzables',
+        'edit_posts',
+        'edit.php?post_type=wp_block',
+        '',
+        'dashicons-editor-table',
+        22
+    );
+}
+
+

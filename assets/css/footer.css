@@ -1,0 +1,12 @@
+footer.wp-block-template-part input:not([type="submit"]).wpcf7-form-control,
+footer.wp-block-template-part textarea.wpcf7-form-control {
+  color: var(--wp--preset--color--base);
+}
+
+footer.wp-block-template-part input[type="submit"].wpcf7-form-control {
+  background-color: var(--wp--preset--color--main);
+}
+
+footer.wp-block-template-part .wpcf7-acceptance a {
+  color: var(--wp--preset--color--main);
+}

@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Entrada
- * Slug: vdv/query-entry
+ * Title: Entrada simple
+ * Slug: vdv/query-entry-lite
  * Categories: query
  * Block Types: core/query
  * Viewport: 400px
@@ -14,13 +14,7 @@
 
     <!-- wp:group {"style":{"spacing":{"blockGap":"0px","margin":{"top":"var:preset|spacing|10"},"padding":{"top":"0"}}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap"}} -->
     <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);padding-top:0">
-        <!-- wp:post-title {"isLink":true,"style":{"layout":{"flexSize":"min(2.5rem, 3vw)","selfStretch":"fixed"}},"fontSize":"large"} /-->
-
-        <!-- wp:template-part {"slug":"post-meta","theme":"lavalldevidre"} /-->
-
-        <!-- wp:post-excerpt {"showMoreOnNewLine":false,"style":{"layout":{"flexSize":null,"selfStretch":"fit"}},"textColor":"contrast-2","fontSize":"small"} /-->
-
-        <!-- wp:read-more /-->
+        <!-- wp:post-title {"level":3,"isLink":true,"style":{"layout":{"flexSize":"min(2.5rem, 3vw)","selfStretch":"fixed"},"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"large"} /-->
     </div>
     <!-- /wp:group -->
 </article>

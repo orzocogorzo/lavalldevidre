@@ -1,6 +1,7 @@
 .wpcf7-form p > label,
 .wpcf7-form p > label .wpcf7-form-control-wrap {
   display: block;
+  font-family: Lato, sans-serif;
 }
 
 input:not([type="submit"]).wpcf7-form-control,
@@ -12,8 +13,8 @@ textarea.wpcf7-form-control {
   border-bottom: 1px solid;
   color: var(--wp--preset--color--typography);
   font-size: var(--wp--preset--font-size--small);
-  padding-top: var(--wp--custom--spacing--sl);
-  padding-bottom: var(--wp--custom--spacing--sm);
+  padding-top: var(--wp--custom--spacing--xs);
+  padding-bottom: var(--wp--custom--spacing--xs);
 }
 
 .wpcf7-form-control::placeholder {
@@ -28,9 +29,8 @@ input[type="submit"].wpcf7-form-control {
   font-weight: var(--wp--custom--font-weight--semi-bold);
   font-size: var(--wp--preset--font-size--small);
   border: none;
-  padding-top: var(--wp--custom--spacing--sl);
-  padding-bottom: var(--wp--custom--spacing--sm);
-  border-radius: 1000px;
+  padding-top: var(--wp--custom--spacing--xs);
+  padding-bottom: var(--wp--custom--spacing--xs);
   cursor: pointer;
 }
 
@@ -45,4 +45,8 @@ input[type="submit"].wpcf7-form-control {
   opacity: 0.5;
   line-height: 1.4;
   display: block;
+}
+
+.wpcf7-acceptance .wpcf7-list-item {
+  margin-left: 0;
 }

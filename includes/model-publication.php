@@ -28,7 +28,6 @@ function vdv_publication_model()
                 'title',
                 'thumbnail',
                 'excerpt',
-                'editor',
             ],
             'rewrite' => [
                 'slug' => 'publicacions'

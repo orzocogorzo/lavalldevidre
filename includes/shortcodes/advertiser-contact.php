@@ -1,6 +1,6 @@
 <?php
 
-add_shortcode('advertiser_contact', function ($atts) {
+add_shortcode('advertiser_contact', function () {
 
     $webpage = get_field('webpage');
     $email = get_field('email');
@@ -28,7 +28,6 @@ add_shortcode('advertiser_contact', function ($atts) {
     <p style="margin-bottom: 0;"><label><b>Pàgina web</b></label><a href="<?= $webpage ?>"><span style="display:block;line-height:1;"><?= $webpage ?></span></a></p>
     <?php endif; ?>
 </div>
-<!-- /wp:group -->
 
 <?php
     return ob_get_clean();

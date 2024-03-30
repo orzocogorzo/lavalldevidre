@@ -1,34 +1,24 @@
 @import "fonts.css";
 @import "forms.css";
+@import "footer.css";
+@import "layout.css";
+@import "responsive.css";
+@import "navigation.css";
 
 body {
   font-size: 18px;
   line-height: 1.8;
 }
 
-main.wp-block-group.has-global-padding,
-footer.wp-block-template-part > .wp-block-group:not(.has-background) {
-  padding: 0 5vw;
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 }
 
 @media (max-width: 760px) {
-  footer.wp-block-template-part > .wp-block-group:not(.has-background),
-  main.wp-block-group.has-global-padding {
-    padding: 0 7.5vw;
-  }
-
   header.wp-block-template-part .wp-block-site-logo img {
     max-width: 120px;
-  }
-}
-
-ul.columns-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--wp--preset--spacing--30);
-}
-
-@media (max-width: 820px) {
-  ul.columns-3 {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
