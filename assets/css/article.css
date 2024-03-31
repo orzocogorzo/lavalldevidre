@@ -1,0 +1,6 @@
+@media (max-width: 760px) {
+  .single-article .wp-block-post-featured-image.vdv-featured-image {
+    width: 100vw;
+    margin-left: calc(var(--wp--preset--spacing--40) * -1) !important;
+  }
+}

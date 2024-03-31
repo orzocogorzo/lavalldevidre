@@ -17,9 +17,9 @@
             <div class="wp-block-column" style="flex-basis:40%">
                 <!-- wp:group {"style":{"dimensions":{"minHeight":""},"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group">
-                    <!-- wp:image {"id":414,"sizeSlug":"large","linkDestination":"none"} -->
-                    <figure class="wp-block-image size-large">
-                        <img src="http://lavalldevidre.cat/wp-content/uploads/2024/03/logotip-white-1024x144.png" alt="" class="wp-image-414"/>
+                    <!-- wp:image {"id":414,"sizeSlug":"large","linkDestination":"none","className":"wp-block-site-logo"} -->
+                    <figure class="wp-block-image size-large wp-block-site-logo">
+                        <img src="/wp-content/uploads/2024/03/logotip-white-1024x144.png" alt="" class="wp-image-414"/>
                     </figure>
                     <!-- /wp:image -->
 
@@ -64,9 +64,9 @@
                     <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                     <div class="wp-block-group" style="padding-top:0;padding-bottom:0">
                         <!-- wp:image {"id":417,"width":"auto","height":"150px","sizeSlug":"full","linkDestination":"custom"} -->
-                        <figure class="wp-block-image size-full is-resized">
+                        <figure class="wp-block-image size-full is-resized wp-block-partner-logo">
                             <a href="https://veinsdevallvidrera.blogspot.com">
-                                <img src="https://lavalldevidre.cat/wp-content/uploads/2024/03/logo_associacio-white.png" alt="" class="wp-image-417" style="width:auto;height:150px"/>
+                                <img src="/wp-content/uploads/2024/03/logo_associacio-white.png" alt="" class="wp-image-417" style="width:auto;height:150px"/>
                             </a>
                         </figure>
                         <!-- /wp:image -->

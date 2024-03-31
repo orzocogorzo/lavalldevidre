@@ -1,2 +1,4 @@
 .php-cs-fixer.cache
 node_modules
+build
+.nvimrc

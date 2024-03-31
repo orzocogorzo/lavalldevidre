@@ -5,8 +5,10 @@ require_once 'includes/model-publication.php';
 require_once 'includes/model-merchant.php';
 
 require_once 'includes/shortcodes/merchant-contact.php';
+require_once 'includes/shortcodes/custom-field.php';
 
 require_once 'custom-blocks/pdf-reader/pdf-reader.php';
+require_once 'custom-blocks/custom-field/custom-field.php';
 
 add_action('wp_enqueue_scripts', 'vdv_enqueue_scripts');
 function vdv_enqueue_scripts()

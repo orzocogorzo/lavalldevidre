@@ -4,21 +4,20 @@
 @import "layout.css";
 @import "responsive.css";
 @import "navigation.css";
+@import "elements.css";
+@import "article.css";
 
 body {
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   line-height: 1.8;
 }
 
 @media (max-width: 760px) {
-  body {
-    font-size: 16px;
-    line-height: 1.7;
+  .wp-block-template-part .wp-block-site-logo img {
+    max-width: 150px;
   }
-}
 
-@media (max-width: 760px) {
-  header.wp-block-template-part .wp-block-site-logo img {
-    max-width: 120px;
+  .wp-block-template-part .wp-block-partner-logo img {
+    max-height: 100px;
   }
 }

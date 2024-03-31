@@ -16,7 +16,7 @@
     <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--10);padding-top:0">
         <!-- wp:post-title {"isLink":true,"style":{"layout":{"flexSize":"min(2.5rem, 3vw)","selfStretch":"fixed"}},"fontSize":"large"} /-->
 
-        <!-- wp:template-part {"slug":"post-meta","theme":"lavalldevidre"} /-->
+        <!-- wp:pattern {"slug":"vdv/metadata-entry"} /-->
 
         <!-- wp:post-excerpt {"showMoreOnNewLine":false,"style":{"layout":{"flexSize":null,"selfStretch":"fit"}},"textColor":"contrast-2","fontSize":"small"} /-->
 
