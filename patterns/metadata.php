@@ -10,8 +10,8 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
-    <!-- wp:group {"style":{"spacing":{"blockGap":"0.3em"}},"layout":{"type":"flex","justifyContent":"left"}} -->
-    <div class="wp-block-group">
+    <!-- wp:group {"style":{"spacing":{"blockGap":"0.3em"},"typography":{"lineHeight":"1"}},"layout":{"type":"flex","justifyContent":"left"}} -->
+    <div class="wp-block-group" style="line-height:1">
         <!-- wp:post-date {"format":"M j, Y","isLink":true} /-->
 
         <!-- wp:paragraph {"textColor":"contrast-2"} -->

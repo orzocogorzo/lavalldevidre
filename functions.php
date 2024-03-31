@@ -42,7 +42,7 @@ add_action('after_setup_theme', 'wpct_add_theme_support');
 function wpct_add_theme_support()
 {
     // Add editor-style.css
-    add_editor_style('assets/css/index.css');
+    add_editor_style('assets/css/editor-style.css');
 }
 
 add_action('pre_get_posts', 'tg_include_custom_post_types_in_archive_pages');

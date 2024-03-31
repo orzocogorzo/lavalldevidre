@@ -4,3 +4,11 @@
     margin-left: calc(var(--wp--preset--spacing--40) * -1) !important;
   }
 }
+
+.wp-block-query-title {
+  font-size: 0px;
+}
+
+.wp-block-query-title span {
+  font-size: var(--wp--preset--font-size--xxx-large);
+}
