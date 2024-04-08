@@ -223,7 +223,7 @@
         },
         "color": {
           "background": "var(--wp--preset--color--main)",
-          "text": "var(--wp--preset--color--brand)"
+          "text": "var(--wp--preset--color--base)"
         },
         "spacing": {
           "padding": {

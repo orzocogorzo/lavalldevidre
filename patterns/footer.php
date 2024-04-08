@@ -88,7 +88,7 @@
                 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group" style="padding-top:0;padding-bottom:0">
                     <!-- wp:heading -->
-                    <h2 class="wp-block-heading">Contacta</h2>
+                    <h2 class="wp-block-heading">Contacta'ns</h2>
                     <!-- /wp:heading -->
 
                     <!-- wp:shortcode -->
