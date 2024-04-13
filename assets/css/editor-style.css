@@ -1,3 +1,19 @@
+/**
+ *
+ * Theme Name:    La Vall de Vidre
+ * Theme URI:     https://github.com/orzocogorzo/lavalldevidre/
+ * Description:   Twenty Twenty Four child theme
+ * Author:        Lucas García
+ * Author URI:    https://github.com/orzocogorzo
+ * Template:      twentytwentyfour
+ * Version:       1.0.0
+ * License:       GNU General Public License v2 or later
+ * License URI:   http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:   vdv
+ * Domain Path:   /languages
+ *
+ */
+
 @font-face {
   font-family: "Adelle";
 
@@ -180,6 +196,58 @@ header.wp-block-template-part
   font-weight: bold;
 }
 
+@media (max-width: 760px) {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child {
+    border-top: 1px solid var(--wp--preset--color--typography);
+    padding-top: var(--wp--preset--spacing--30);
+    margin-top: var(--wp--preset--spacing--20);
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > a {
+    display: none;
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > .wp-block-navigation-submenu 
+    > .wp-block-navigation-item {
+    width: 100%;
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > .wp-block-navigation-submenu 
+    > .wp-block-navigation-item:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    .wp-block-navigation-item
+    > a {
+    background-color: var(--wp--preset--color--main);
+    color: var(--wp--preset--color--base);
+    font-size: inherit;
+    padding-left: 1.6em;
+    padding-right: 1.6em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    border-radius: 100px;
+    width: calc(100% - 3.2em);
+    text-align: center;
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    .wp-block-navigation-item
+    > a > span {
+    width: 100%;
+  }
+}
+
 a:where(:not(.wp-element-button)):hover {
   text-decoration: underline;
 }
@@ -189,6 +257,14 @@ a:where(:not(.wp-element-button)):hover {
     width: 100vw;
     margin-left: calc(var(--wp--preset--spacing--40) * -1) !important;
   }
+}
+
+.wp-block-query-title {
+  font-size: 0px;
+}
+
+.wp-block-query-title span {
+  font-size: var(--wp--preset--font-size--xxx-large);
 }
 
 body {

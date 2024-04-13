@@ -19,3 +19,9 @@ body .wp-block-vdv-pdf-reader .is-layout-flex > * {
 	flex-wrap: nowrap;
 	justify-content: center;
 }
+
+@media (max-width: 760px) {
+  .wp-block-vdv-pdf-reader object {
+    height: 60vh !important;
+  }
+}
