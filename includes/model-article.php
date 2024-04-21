@@ -18,7 +18,7 @@ function vdv_article_model()
 
             // Admin
             'capability_type' => 'post',
-            'menu_icon' => 'dashicons-admin-home',
+            'menu_icon' => 'dashicons-admin-page',
             'menu_position' => 28,
             'query_var' => true,
             'show_in_menu' => true,

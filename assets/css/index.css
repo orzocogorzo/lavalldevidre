@@ -6,6 +6,7 @@
 @import "navigation.css";
 @import "elements.css";
 @import "article.css";
+@import "agenda.css";
 
 body {
   font-size: clamp(15px, 2vw, 18px);

@@ -3,6 +3,7 @@
 require_once 'includes/model-article.php';
 require_once 'includes/model-publication.php';
 require_once 'includes/model-merchant.php';
+require_once 'includes/model-event.php';
 
 require_once 'includes/shortcodes/merchant-contact.php';
 require_once 'includes/shortcodes/custom-field.php';
@@ -32,12 +33,44 @@ function vdv_enqueue_scripts()
         $theme->get('Version')
     );
 
-    wp_enqueue_script(
-        $theme->get_stylesheet(),
-        $theme->get_stylesheet_directory_uri() . '/assets/js/index.js',
-        [$parent->get_stylesheet()],
-        $theme->get('Version'),
-    );
+    // wp_enqueue_script(
+    //     $theme->get_stylesheet(),
+    //     $theme->get_stylesheet_directory_uri() . '/assets/js/index.js',
+    //     [$parent->get_stylesheet()],
+    //     $theme->get('Version'),
+    // );
+
+    if (is_archive() && get_post_type() === 'event') {
+        wp_enqueue_script(
+            'fullcalendar',
+            'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js',
+            [],
+            '6.1.11',
+        );
+
+        wp_enqueue_script(
+            'fullcalendar-ca',
+            $theme->get_stylesheet_directory_uri() . '/assets/js/ca.global.min.js',
+            [],
+            '6.1.11'
+        );
+
+        $script_slug = $theme->get_stylesheet() . '-agenda';
+        wp_enqueue_script(
+            $script_slug,
+            $theme->get_stylesheet_directory_uri() . '/assets/js/agenda.js',
+            ['fullcalendar', 'fullcalendar-ca'],
+            $theme->get('Version'),
+        );
+
+        wp_localize_script(
+            $script_slug,
+            'vdvAgendaSettings',
+            [
+                'endpoint' => get_rest_url(null, 'wp/v2/event'),
+            ]
+        );
+    }
 }
 
 add_action('after_setup_theme', 'wpct_add_theme_support');
@@ -167,4 +200,18 @@ function vdv_reusable_blocks_admin_menu()
     );
 }
 
-
+add_filter('rest_event_query', function ($args, $request) {
+    $args['meta_query'] = [
+        [
+            'key' => 'start_date',
+            'value' => str_replace('-', '', $request['start_date']),
+            'compare' => '>=',
+        ],
+        [
+            'key' => 'end_date',
+            'value' => str_replace('-', '', $request['end_date']),
+            'compare' => '<=',
+        ]
+    ];
+    return $args;
+}, 10, 2);
