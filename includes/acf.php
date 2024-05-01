@@ -171,6 +171,84 @@ add_action('acf/include_fields', function () {
 ));
 
     acf_add_local_field_group(array(
+    'key' => 'group_66253b8e452c7',
+    'title' => 'Esdeveniment',
+    'fields' => array(
+        array(
+            'key' => 'field_66253b8ea6e07',
+            'label' => 'Dia',
+            'name' => 'start_date',
+            'aria-label' => '',
+            'type' => 'date_picker',
+            'instructions' => 'Indica la data de l\'esdeveniment',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '50',
+                'class' => '',
+                'id' => '',
+            ),
+            'display_format' => 'Y-m-d',
+            'return_format' => 'Y-m-d',
+            'first_day' => 1,
+        ),
+        array(
+            'key' => 'field_66253bf7a6e08',
+            'label' => 'Final',
+            'name' => 'end_date',
+            'aria-label' => '',
+            'type' => 'date_picker',
+            'instructions' => 'Indica la data de finalització de l\'esdeveniment, en cas que la seva durada sigui de més d\'un dia',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '50',
+                'class' => '',
+                'id' => '',
+            ),
+            'display_format' => 'Y-m-d',
+            'return_format' => 'Y-m-d',
+            'first_day' => 1,
+        ),
+        array(
+            'key' => 'field_66253c982d29f',
+            'label' => 'Enllaç extern',
+            'name' => 'external_url',
+            'aria-label' => '',
+            'type' => 'url',
+            'instructions' => 'Indica l\'enllaç al recurs extern en cas que existieix. De ser informat aquest valor, el calendari permetrà a les usuaries navegar a aquest enllaç fent clic sobre l\'esdeveniment.',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => 'https://',
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'event',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    'show_in_rest' => 0,
+));
+
+    acf_add_local_field_group(array(
     'key' => 'group_660710d1569ad',
     'title' => 'Publicació',
     'fields' => array(

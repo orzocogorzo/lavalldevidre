@@ -4,6 +4,7 @@
  */
 
 $post_id = get_the_ID();
+$proto = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : $_SERVER['REQUEST_SCHEME'];
 if ($post_id) {
 	$url = get_post_meta($post_id, 'url', true);
 	if (preg_match('#(?<=file/d/)(.(?!/))*.#', $url, $matches)) {
@@ -16,11 +17,11 @@ if ($post_id) {
 
 	$dir = dirname(__FILE__, 2);
 	$path = preg_replace('#^(.(?!wp-content))*.#', '', $dir);
-	$src = "https://{$_SERVER['HTTP_HOST']}/{$path}/stream.php?url={$download_url}";
+	$src = "{$proto}://{$_SERVER['HTTP_HOST']}/{$path}/stream.php?url={$download_url}";
 } else {
 	$dir = dirname(__FILE__, 2);
 	$path = preg_replace('#^(.(?!wp-content))*.#', '', $dir);
-	$src = "https://{$_SERVER['HTTP_HOST']}/{$path}/placeholder.pdf";
+	$src = "{$proto}://{$_SERVER['HTTP_HOST']}/{$path}/placeholder.pdf";
 }
 ?>
 
