@@ -1,0 +1,12 @@
+header.wp-block-template-part form.vdv-search label {
+  display: none;
+}
+
+header.wp-block-template-part form.vdv-search .wp-block-search__button {
+  visibility: hidden;
+  position: absolute;
+}
+
+body.search.search-results .wp-block-query-title {
+  font-size: var(--wp--preset--font-size--xxx-large);
+}

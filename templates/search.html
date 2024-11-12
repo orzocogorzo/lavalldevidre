@@ -4,13 +4,19 @@
 <div class="wp-block-group alignfull site-content" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
   <!-- wp:group {"tagName":"main","align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained","contentSize":"860px"}} -->
   <main class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0;padding-right:0;padding-left:0">
-    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40)">
-      <!-- wp:query-title {"type":"archive","align":"wide","style":{"typography":{"lineHeight":"1"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|10"}}}} /-->
+
+    <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--10)">
+      <!-- wp:query-title {"type":"search","align":"wide","style":{"typography":{"lineHeight":"1"},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}}} /-->
+    </div>
+
+    <!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"840px","justifyContent":"left"}} -->
+    <div class="wp-block-group alignwide">
+      <!-- wp:search {"label":"Cerca","showLabel":false,"buttonText":"Cerca","fontSize":"medium"} /-->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:query {"queryId":0,"query":{"perPage":9,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"enhancedPagination":true,"align":"wide","layout":{"type":"default"}} -->
+    <!-- wp:query {"queryId":24,"query":{"perPage":9,"pages":0,"offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
     <div class="wp-block-query alignwide">
       <!-- wp:query-no-results -->
         <!-- wp:paragraph -->
@@ -39,8 +45,6 @@
     <!-- /wp:query -->
   </main>
   <!-- /wp:group -->
-
-  <!-- wp:template-part {"slug":"aside","theme":"lavalldevidre","tagName":"aside","area":"uncategorized"} /-->
 </div>
 <!-- /wp:group -->
 
