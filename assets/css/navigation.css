@@ -1,50 +1,76 @@
-header.wp-block-template-part .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content li,
-header.wp-block-template-part .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content ul {
+header.wp-block-template-part
+  .wp-block-navigation__responsive-container.is-menu-open
+  .wp-block-navigation__responsive-container-content
+  li,
+header.wp-block-template-part
+  .wp-block-navigation__responsive-container.is-menu-open
+  .wp-block-navigation__responsive-container-content
+  ul {
   align-items: flex-start;
 }
 
-header.wp-block-template-part .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+header.wp-block-template-part
+  .wp-block-navigation__responsive-container.is-menu-open
+  .wp-block-navigation__responsive-container-content {
   padding-right: 1rem;
 }
 
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+.wp-block-navigation__responsive-container.is-menu-open
+  .wp-block-navigation__responsive-container-content
+  .wp-block-navigation__submenu-container {
   padding-top: 0.5em;
 }
 
-.wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open,
-.wp-block-navigation:not(.has-text-color) .wp-block-navigation__submenu-container {
+.wp-block-navigation:not(.has-text-color)
+  .wp-block-navigation__responsive-container.is-menu-open,
+.wp-block-navigation:not(.has-text-color)
+  .wp-block-navigation__submenu-container {
   color: var(--wp--preset--color--typography);
 }
 
-.wp-block-navigation-submenu>a {
+.wp-block-navigation-submenu > a {
   pointer-events: none;
 }
 
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-submenu>a {
+.wp-block-navigation__responsive-container.is-menu-open
+  .wp-block-navigation-submenu
+  > a {
   color: var(--wp--preset--color--brand) !important;
   font-weight: bold;
 }
 
 @media (max-width: 760px) {
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child {
     border-top: 1px solid var(--wp--preset--color--typography);
     padding-top: var(--wp--preset--spacing--30);
     margin-top: var(--wp--preset--spacing--20);
   }
 
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child>a {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > a {
     display: none;
   }
 
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child>.wp-block-navigation-submenu>.wp-block-navigation-item {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > .wp-block-navigation-submenu
+    > .wp-block-navigation-item {
     width: 100%;
   }
 
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child>.wp-block-navigation-submenu>.wp-block-navigation-item:not(:last-child) {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    > .wp-block-navigation-submenu
+    > .wp-block-navigation-item:not(:last-child) {
     margin-bottom: 1em;
   }
 
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child .wp-block-navigation-item>a {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    .wp-block-navigation-item
+    > a {
     background-color: var(--wp--preset--color--main);
     color: var(--wp--preset--color--base);
     font-size: inherit;
@@ -57,7 +83,11 @@ header.wp-block-template-part .wp-block-navigation__responsive-container.is-menu
     text-align: center;
   }
 
-  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.has-child:last-child .wp-block-navigation-item>a>span {
+  .wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation-item.has-child:last-child
+    .wp-block-navigation-item
+    > a
+    > span {
     width: 100%;
   }
 }
