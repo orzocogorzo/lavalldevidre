@@ -215,3 +215,7 @@ add_filter('rest_event_query', function ($args, $request) {
     ];
     return $args;
 }, 10, 2);
+
+add_filter('excerpt_length', function () {
+    return 28;
+});

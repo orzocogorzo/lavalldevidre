@@ -12,9 +12,15 @@
   flex: 1;
   max-width: 1200px;
   margin-left: auto !important;
-  margin-right: auto !important
+  margin-right: auto !important;
 }
 
 .site-content > aside {
   max-width: 300px !important;
+}
+
+@media (max-width: 760px) {
+  .site-content > aside > .wp-block-group {
+    padding-left: 0px !important;
+  }
 }

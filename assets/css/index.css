@@ -9,6 +9,7 @@
 @import "agenda.css";
 @import "search.css";
 @import "header.css";
+@import "home.css";
 
 body {
   font-size: clamp(15px, 2vw, 18px);

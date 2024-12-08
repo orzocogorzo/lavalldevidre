@@ -1,0 +1,21 @@
+@media (max-width: 760px) {
+  .home
+    .site-content
+    > main
+    .wp-block-query
+    .wp-block-post-template:not(.columns-3)
+    .wp-block-columns
+    > .wp-block-column:last-child {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .home
+    .site-content
+    > main
+    .wp-block-query
+    .wp-block-post-template.columns-3
+    .article:not(:last-child) {
+    padding-bottom: var(--wp--preset--spacing--40);
+  }
+}
