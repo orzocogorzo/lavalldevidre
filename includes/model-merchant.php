@@ -7,8 +7,8 @@ function vdv_merchant_model()
         'merchant',
         [
             'labels' => [
-                'name' => __('Comerços', 'vdv'),
-                'singular_name' => __('Comerç', 'vdv')
+                'name' => __('Anunciants', 'vdv'),
+                'singular_name' => __('Anunciant', 'vdv')
             ],
 
             // Frontend
@@ -27,7 +27,6 @@ function vdv_merchant_model()
             'supports' => [
                 'title',
                 'thumbnail',
-                'editor',
             ],
             'rewrite' => [
                 'slug' => 'anunciants'

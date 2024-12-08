@@ -219,3 +219,7 @@ add_filter('rest_event_query', function ($args, $request) {
 add_filter('excerpt_length', function () {
     return 28;
 });
+
+add_filter('admin_menu', function () {
+    remove_menu_page('edit.php?post_type=event');
+});
