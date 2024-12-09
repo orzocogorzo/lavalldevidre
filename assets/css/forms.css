@@ -50,3 +50,7 @@ input[type="submit"].wpcf7-form-control {
 .wpcf7-acceptance .wpcf7-list-item {
   margin-left: 0;
 }
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: var(--wp--preset--color--brand);
+}

@@ -10,3 +10,7 @@ footer.wp-block-template-part input[type="submit"].wpcf7-form-control {
 footer.wp-block-template-part .wpcf7-acceptance a {
   color: var(--wp--preset--color--main);
 }
+
+footer.wp-block-template-part .wpcf7 form.sent .wpcf7-response-output {
+  border-color: white;
+}
