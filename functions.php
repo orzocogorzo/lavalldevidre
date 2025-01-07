@@ -73,8 +73,8 @@ function vdv_enqueue_scripts()
     }
 }
 
-add_action('after_setup_theme', 'wpct_add_theme_support');
-function wpct_add_theme_support()
+add_action('after_setup_theme', 'vdv_add_theme_support');
+function vdv_add_theme_support()
 {
     // Add editor-style.css
     add_editor_style('assets/css/editor-style.css');
@@ -140,35 +140,35 @@ function vdv_custom_block_styles()
     $styles = [
         'core/group' => [
             'hidden' => __('Hidden', 'vdv'),
-            'show-mobile' => __('ShowOn Mobile', 'wpct'),
-            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
-            'show-tablet' => __('ShowOn Tablet', 'wpct'),
-            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
-            'show-desktop' => __('ShowOn Desktop', 'wpct'),
+            'show-mobile' => __('ShowOn Mobile', 'vdv'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'vdv'),
+            'show-tablet' => __('ShowOn Tablet', 'vdv'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'vdv'),
+            'show-desktop' => __('ShowOn Desktop', 'vdv'),
         ],
         'core/column' => [
-            'hidden' => __('Hidden', 'wpct'),
-            'show-mobile' => __('ShowOn Mobile', 'wpct'),
-            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
-            'show-tablet' => __('ShowOn Tablet', 'wpct'),
-            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
-            'show-desktop' => __('ShowOn Desktop', 'wpct')
+            'hidden' => __('Hidden', 'vdv'),
+            'show-mobile' => __('ShowOn Mobile', 'vdv'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'vdv'),
+            'show-tablet' => __('ShowOn Tablet', 'vdv'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'vdv'),
+            'show-desktop' => __('ShowOn Desktop', 'vdv')
         ],
         'core/spacer' => [
-            'hidden' => __('Hidden', 'wpct'),
-            'show-mobile' => __('ShowOn Mobile', 'wpct'),
-            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
-            'show-tablet' => __('ShowOn Tablet', 'wpct'),
-            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
-            'show-desktop' => __('ShowOn Desktop', 'wpct')
+            'hidden' => __('Hidden', 'vdv'),
+            'show-mobile' => __('ShowOn Mobile', 'vdv'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'vdv'),
+            'show-tablet' => __('ShowOn Tablet', 'vdv'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'vdv'),
+            'show-desktop' => __('ShowOn Desktop', 'vdv')
         ],
         'core/columns' => [
-            'hidden' => __('Hidden', 'wpct'),
-            'show-mobile' => __('ShowOn Mobile', 'wpct'),
-            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'wpct'),
-            'show-tablet' => __('ShowOn Tablet', 'wpct'),
-            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'wpct'),
-            'show-desktop' => __('ShowOn Desktop', 'wpct')
+            'hidden' => __('Hidden', 'vdv'),
+            'show-mobile' => __('ShowOn Mobile', 'vdv'),
+            'show-mobile-tablet' => __('ShowOn Mobile-Tablet', 'vdv'),
+            'show-tablet' => __('ShowOn Tablet', 'vdv'),
+            'show-tablet-desktop' => __('ShowOn Tablet-Desktop', 'vdv'),
+            'show-desktop' => __('ShowOn Desktop', 'vdv')
         ]
 
     ];
@@ -222,4 +222,115 @@ add_filter('excerpt_length', function () {
 
 add_filter('admin_menu', function () {
     remove_menu_page('edit.php?post_type=event');
+});
+
+# SMTP
+add_action('admin_init', function () {
+    add_settings_section(
+        'vdv-smtp',
+        __('SMTP email sending', 'vdv'),
+        function () {
+            echo __(
+                'Configure WP to send emails through your SMTP server',
+                'vdv'
+            );
+        },
+        'general'
+    );
+
+    add_settings_field(
+        'vdv-smtp',
+        __('Credentials', 'vdv'),
+        'vdv_smtp_credentials',
+        'general',
+        'vdv-smtp'
+    );
+
+    register_setting('general', 'vdv-smtp', [
+        'type' => 'object',
+        'show_in_rest' => false,
+        'default' => [
+            'enabled' => false,
+            'host' => '',
+            'port' => '',
+            'secure' => '',
+            'username' => '',
+            'password' => '',
+            'from' => '',
+        ],
+    ]);
+});
+
+function vdv_smtp_credentials()
+{
+    $value = (array) get_option('vdv-smtp', []);
+
+    echo '<fieldset style="width:fit-content">';
+    echo '<legend class="screen-reader-text"><span>Credencials SMTP</span></legend>';
+    vdv_smtp_field('checkbox', 'enabled', (bool) $value['enabled']);
+    vdv_smtp_field('text', 'host', $value['host']);
+    vdv_smtp_field('text', 'port', $value['port']);
+    vdv_smtp_field('select', 'secure', $value['secure'], ['tls', 'ssl']);
+    vdv_smtp_field('text', 'username', $value['username']);
+    vdv_smtp_field('password', 'password', $value['password']);
+    vdv_smtp_field('text', 'from', $value['from']);
+    echo '</fieldset>';
+}
+
+function vdv_smtp_field($type, $name, $value, $options = [])
+{
+    $label = __($name, 'vdv');
+    echo "<label style='display:flex;justify-content:space-between;width:100%'><b style='margin-right:1em'>{$label}</b>";
+    if ($type === 'select') {
+        $options =
+            '<option></option>' .
+            implode(
+                '',
+                array_map(function ($opt) use ($value) {
+                    $label = __($opt, 'vdv');
+                    $selected = $value === $opt ? 'selected' : '';
+                    return "<option value='{$opt}' {$selected}>{$label}</option>";
+                }, $options)
+            );
+        echo "<select id='vdv-smtp[{$name}]' name='vdv-smtp[{$name}]' style='width:196px'>{$options}</select>";
+    } elseif ($type === 'checkbox') {
+        $checked = $value ? 'checked' : '';
+        echo "<input type='checkbox' name='vdv-smtp[{$name}]' id='vdv-smtp[{$name}]' {$checked} />";
+    } else {
+        echo "<input type='{$type}' name='vdv-smtp[{$name}]' id='vdv-smtp[{$name}]' value='{$value}' />";
+    }
+    echo '</label><br />';
+}
+
+add_action('phpmailer_init', function ($phpmailer) {
+    $smtp = (array) get_option('vdv-smtp', []);
+    if (!$smtp['enabled']) {
+        return;
+    }
+
+    if (
+        !(
+            $smtp['host'] &&
+            $smtp['port'] &&
+            $smtp['secure'] &&
+            $smtp['username'] &&
+            $smtp['password']
+        )
+    ) {
+        return;
+    }
+
+    extract($smtp);
+    $phpmailer->isSMTP();
+    $phpmailer->Host = $host;
+    $phpmailer->Port = (int) $port;
+    $phpmailer->SMTPSecure = $secure;
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Username = $username;
+    $phpmailer->Password = $password;
+    $phpmailer->From = $username;
+    if (!empty($from)) {
+        $phpmailer->FromName = $from;
+        $phpmailer->addReplyTo($username, $from);
+    }
 });
