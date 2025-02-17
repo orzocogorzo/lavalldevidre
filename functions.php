@@ -129,7 +129,7 @@ add_action('init', function () {
 });
 
 add_action('pre_get_posts', function ($query) {
-    if (!$query->is_main_query() && !is_admin() && $query->query_vars['post_type'] === 'merchant') {
+    if (!$query->is_main_query() && !is_admin() && isset($query->query_vars['post_type']) && $query->query_vars['post_type'] === 'merchant') {
         $query->set('orderby', 'rand');
     }
 });
