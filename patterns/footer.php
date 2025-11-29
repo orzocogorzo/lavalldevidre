@@ -7,6 +7,15 @@
  */
 ?>
 
+<?php
+/**
+ * Title: Footer with colophon, 4 columns
+ * Slug: lavalldevidre/footer
+ * Categories: footer
+ * Block Types: core/template-part/footer
+ */
+?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"brand","textColor":"base","layout":{"type":"constrained","contentSize":""}} -->
 <div
   class="wp-block-group has-base-color has-brand-background-color has-text-color has-background"
