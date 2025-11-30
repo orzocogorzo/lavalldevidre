@@ -1,0 +1,13 @@
+{
+  "name": "vdv-related-articles",
+  "version": "0.1.0",
+  "description": "Related articles by tags",
+  "author": "Còdec",
+  "license": "GPL-3.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "build": "node esbuild/build.cjs",
+    "dev": "node esbuild/dev.cjs"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vdv",
+  "version": "1.0.1",
+  "description": "Wpct child theme for sommobiliat.coop web",
+  "author": "Còdec",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orzocogorzo/lavalldevidre.cat"
+  },
+  "theme_uri": "https://github.com/orzocogorzo/lavalldevidre.cat",
+  "author_uri": "https://github.com/orzocogorzo",
+  "text_domain": "vdv",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
+}

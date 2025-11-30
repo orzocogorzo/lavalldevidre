@@ -12,6 +12,7 @@ require_once 'includes/acf.php';
 
 require_once 'custom-blocks/pdf-reader/pdf-reader.php';
 require_once 'custom-blocks/custom-field/custom-field.php';
+require_once 'custom-blocks/related-articles/related-articles.php';
 
 add_action('wp_enqueue_scripts', 'vdv_enqueue_scripts');
 function vdv_enqueue_scripts()
