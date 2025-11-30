@@ -8,7 +8,13 @@
 */
 
 $post = get_post();
-$tags = wp_get_post_terms($post->ID, 'post_tag');
+$terms = wp_get_post_terms($post->ID, 'post_tag');
+$tags = array();
+foreach ($terms as $term) {
+    if ($term->slug !== 'destacat') {
+        $tags[] = $term;
+    }
+}
 
 $args = array(
   'post_type' => 'article',
